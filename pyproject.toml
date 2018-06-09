@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=61.2.0", "setuptools_scm[toml]>=3.4.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "AMO2Git"
+readme = "ReadMe.md"
+description = "This tool converts a release history on AMO into a git repo history."
+authors = [{name = "KOLANICH"}]
+classifiers = [
+	"Development Status :: 4 - Beta",
+	"Environment :: Other Environment",
+	"Intended Audience :: Developers",
+	"License :: Public Domain",
+	"Operating System :: OS Independent",
+	"Programming Language :: Python",
+	"Programming Language :: Python :: 3",
+	"Programming Language :: Python :: 3 :: Only",
+	"Topic :: Software Development :: Libraries :: Python Modules",
+]
+keywords = ["addons", "Mozilla", "xpi", "WebExtension"]
+license = {text = "Unlicense"}
+requires-python = ">=3.4"
+dynamic = ["version"]
+dependencies = [
+	"requests", # @ git+https://github.com/psf/requests.git
+	"plumbum", # @ git+https://github.com/tomerfiliba/plumbum.git
+	"gitpython", # @ git+https://github.com/gitpython-developers/GitPython.git
+	"tqdm", # @ git+https://github.com/tqdm/tqdm.git
+]
+
+[project.urls]
+Homepage = "https://codeberg.org/KOLANICH-tools/AMO2Git.py"
+
+[tool.setuptools]
+zip-safe = true
+
+[tool.setuptools.packages.find]
+include = ["AMO2Git", "AMO2Git.*"]
+
+[tool.setuptools_scm]
