@@ -4,6 +4,7 @@ import tempfile
 from collections import OrderedDict
 from pathlib import Path, PurePath
 from urllib.parse import urlparse
+from warnings import warn
 
 import git
 
@@ -12,6 +13,7 @@ from .utils import *
 from .utils.arg import argmin
 from .utils.ExclZipFile import *
 
+warn("We have moved from M$ GitHub to https://codeberg.org/KOLANICH-tools/AMO2Git.py , read why on https://codeberg.org/KOLANICH/Fuck-GuanTEEnomo .")
 
 class GitName(git.Actor):
 	def __init__(self, name, email=None):
